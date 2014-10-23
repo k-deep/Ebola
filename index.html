@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="cleartype" content="on">
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+<script type="text/javascript" src="js/jquery/jquery-validation-1.13.0/jquery.validate.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/ebola.css"/>
+<script type="text/javascript" src="js/ebola.js"></script>
+
+<title>Ebola Triage Screening</title>
+</head>
+<body style="font-family: Arial">
+
+
+
+<div data-role="page" class="page" id="form">
+	<div data-role="content">
+		<div class="title">
+			 Ebola Virus Disease Screening
+		</div>
+		 
+		<div class="responsive_2col_wrapper">
+		    <div class="responsive_2col_col1">
+			    <image src="images/ebola_EM.jpg" style="max-width: 100%; max-height: 100%;">
+		    </div>
+		    <div class="responsive_2col_col2">
+				Rapid Identification of patients with possible Ebola is critical for patient
+				care and initiating proper isolation measures and reducing the risk of Ebola transmission.
+				This tool is designed to identify patients that meet the <a target="_blank" href="http://www.cdc.gov/vhf/ebola/hcp/case-definition.html">CDC Case Definition for Ebola Virus Disease</a>.
+		    </div>
+	    </div>
+	
+		
+		<div>
+			<form id="frmEbola" method="get" action="javascript:void(0);">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend>1. Patient's Temperature?</legend>
+					<span id="radioFeverError"></span>
+					<input type="radio" name="radioFever" id="radioFeverYes" value="no">
+					<label for="radioFeverYes">&le;38 &deg;C<BR>&le;100.4 &deg;F</label>
+					
+					<input type="radio" name="radioFever" id="radioFeverNo" value="yes">
+					<label for="radioFeverNo">&gt;38 &deg;C<BR>&gt;100.4 &deg;F</label>
+				</fieldset>   
+				
+				<br>
+				
+				<fieldset data-role="controlgroup">
+					<legend>2. Does the patient have any of the following symptoms?<br>&nbsp;&nbsp;&nbsp;&nbsp;[Select <u>ALL</u> that apply]</legend>
+					<span id="CbSymptomsError"></span>
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbSevereHeadache" value="SevereHeadache" >
+					<label for="CbSevereHeadache">Severe Headache</label>
+					
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbMusclePain" value="MusclePain">
+					<label for="CbMusclePain">Muscle Pain</label>
+					
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbVomiting" value="Vomiting">
+					<label for="CbVomiting">Vomiting</label>
+					
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbDiarrhea" value="Diarrhea">
+					<label for="CbDiarrhea">Diarrhea</label>
+					
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbAbdominalPain" value="AbdominalPain">
+					<label for="CbAbdominalPain">Abdominal Pain</label>
+					
+					<input type="checkbox" class="IsSymptom" name="CbSymptoms" id="CbUnexplainedHemorrhage" value="UnexplainedHemorrhage">
+					<label for="CbUnexplainedHemorrhage">Unexplained Hemorrhage</label>
+					
+					<input type="checkbox" class="IsNoSymptom" name="CbSymptoms" id="CbNoSymptoms" value="NoSymptoms">
+					<label for="CbNoSymptoms">None of the Above</label>
+				</fieldset>
+				  
+				<br>
+				
+				<fieldset data-role="controlgroup">
+					<legend>3. Was the patient exposed to any of the following risk factors 21 DAYS before onset of symptoms?<br>&nbsp;&nbsp;&nbsp;&nbsp;[Select <u>ALL</u> that apply]</legend>
+					<span id="CbExposuresError"></span>
+					<input type="checkbox" class="IsExposure" name="CbExposures" id="CbDirectContact" value="DirectContact">
+					<label for="CbDirectContact"> Direct contact with blood, other bodily fluids fluids, or human remains of a person
+					with suspected or confirmed Ebola without the use of appropriate personal protective
+					equipment (PPE).&nbsp; (This includes laboratory workers who have processed bodily
+					fluids from suspected or confirmed Ebola patients without appropriate PPE or standard biosafety precautions).</label>
+					
+					<input type="checkbox" class="IsExposure" name="CbExposures" id="CbTravel" value="Travel">
+					<label for="CbTravel"> Travel or residence in an area where Ebola transmission is active (Liberia, Sierra
+					Leone, Guinea, and Lagos in Nigeria as of 9/26/2014)</label>
+					
+					<input type="checkbox" class="IsExposure" name="CbExposures" id="CbResidence" value="Residence">
+					<label for="CbResidence">Residence in the same house as an Ebola patient</label>
+					
+					<input type="checkbox" class="IsExposure" name="CbExposures" id="CbProvisionOfCare" value="ProvisionOfCare">
+					<label for="CbProvisionOfCare"> Provision of care to an Ebola patient (even without direct contact with blood, other
+					bodily fluids, or human remains)</label>
+					
+					<input type="checkbox" class="IsExposure" name="CbExposures" id="CbCasualContact" value="CasualContact">
+					<label for="CbCasualContact">Casual contact with an Ebola patient.&nbsp; Casual contact is defined as being in close
+					proximity (e.g., within 3 feet) for a prolonged period of time while not wearing
+					not recommended PPE or brief direct contact (e.g., shaking hands) with an Ebola
+					case while not wearing PPE.&nbsp; Brief interactions, such as walking by a person
+					or moving through a hospital, <strong><span style="text-decoration: underline">do not
+					constitute</span></strong> casual contact.</label>
+					
+					<input type="checkbox" class="IsNoExposure" name="CbExposures" id="CbRiskNone" value="NoExposure" >
+					<label for="CbRiskNone">None of the above</label>
+				</fieldset>
+				
+				<br>
+				
+				<input id="SubmitButton" name="SubmitButton" type="submit" value="Submit" data-theme="b"/>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="resultPage">
+	<div data-role="content">
+		<div class="title">
+			 Ebola Virus Disease Screening
+		</div>
+		
+		<span id="resultDiv"></span>
+		
+		<p><a href="#form" data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back</a></p>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+.page {
+	background: #ffffff;
+}
+
+.title {
+	font-size: 20px;
+	color: #9B4C9B;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+legend {
+	font-weight: bold;
+}
+
+.suspect_text {
+	font-weight: bold;
+	color: red;
+	border: 2px solid black;
+	background: #ffe2e2;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.not_suspect_text {
+	font-weight: bold;
+	color: black;
+	border: 2px solid black;
+	background: #e2ffe8;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.responsive_2col_wrapper { 
+  overflow:hidden;
+}
+
+.responsive_2col_wrapper div {
+   min-width: 170px;
+}
+.responsive_2col_col1  {
+  float:left; 
+  margin-right:10px;
+  width:140px;
+  margin-bottom:10px;
+}
+.responsive_2col_col2 { 
+  overflow:hidden;
+  min-width:100px;
+}
+
+@media screen and (max-width: 400px) {
+   .responsive_2col_col1 { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+  }
+}
